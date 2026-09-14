@@ -1,0 +1,31 @@
+{
+  "name": "@ahmnouira/<name>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changelog": "auto-changelog -p",
+    "prepare": "rimraf dist && tsc"
+  },
+  "keywords": [
+    "typescript",
+    "ahmnouira"
+  ],
+  "author": {
+    "name": "Ahmed Nouira",
+    "email": "ahmnouira@gmail.com",
+    "url": "https://github.com/ahmnouira"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "auto-changelog": "^2.5.1",
+    "rimraf": "^6.1.3",
+    "typescript": "^6.0.3"
+  }
+}
