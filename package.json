@@ -1,21 +1,80 @@
 {
-  "name": "@ahmnouira/<name>",
+  "name": "@ahmnouira/utils",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of small, dependency-free TypeScript utilities for arrays, dates, forms, logging, strings, URLs and more.",
+  "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./array": {
+      "types": "./dist/array/index.d.ts",
+      "default": "./dist/array/index.js"
+    },
+    "./config": {
+      "types": "./dist/config/index.d.ts",
+      "default": "./dist/config/index.js"
+    },
+    "./date": {
+      "types": "./dist/date/index.d.ts",
+      "default": "./dist/date/index.js"
+    },
+    "./delay": {
+      "types": "./dist/delay/index.d.ts",
+      "default": "./dist/delay/index.js"
+    },
+    "./form": {
+      "types": "./dist/form/index.d.ts",
+      "default": "./dist/form/index.js"
+    },
+    "./log": {
+      "types": "./dist/log/index.d.ts",
+      "default": "./dist/log/index.js"
+    },
+    "./string": {
+      "types": "./dist/string/index.d.ts",
+      "default": "./dist/string/index.js"
+    },
+    "./url": {
+      "types": "./dist/url/index.d.ts",
+      "default": "./dist/url/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist"
   ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
+    "clean": "rimraf dist",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "changelog": "auto-changelog -p",
+    "prepublishOnly": "npm test && npm run build",
     "prepare": "rimraf dist && tsc"
   },
   "keywords": [
+    "utils",
+    "utilities",
     "typescript",
-    "ahmnouira"
+    "helpers",
+    "array",
+    "date",
+    "form",
+    "password",
+    "url",
+    "slug",
+    "logging"
   ],
   "author": {
     "name": "Ahmed Nouira",
@@ -23,10 +82,19 @@
     "url": "https://github.com/ahmnouira"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmnouira/ahmnouira-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmnouira/ahmnouira-utils/issues"
+  },
+  "homepage": "https://github.com/ahmnouira/ahmnouira-utils#readme",
   "devDependencies": {
     "@types/node": "^26.5.1",
     "auto-changelog": "^2.5.1",
     "rimraf": "^6.1.3",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^3.2.4"
   }
 }

@@ -1,6 +1,8 @@
 node_modules
 src
+tests
 .git
 .github
 *.log
 tsconfig.json
+vitest.config.ts
