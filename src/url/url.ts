@@ -3,6 +3,3 @@ export const formatUrl = (url: string) =>
 
 export const formatUrlEncoded = (url: string) =>
   encodeURIComponent(formatUrl(url));
-
-export const getChannelTopicURI = (c: string, t: string) =>
-  `/channels/${c}/${formatUrlEncoded(t)}`;

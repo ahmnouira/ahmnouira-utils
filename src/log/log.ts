@@ -1,4 +1,4 @@
-import { DEV } from "./config/config";
+import { DEV } from "../config/env";
 
 export const log = (...data: any[]) => {
   if (DEV) console.log(data);
