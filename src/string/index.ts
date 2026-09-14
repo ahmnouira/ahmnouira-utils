@@ -1,2 +1,2 @@
-export * from "./capitalize";
-export * from "./extractColors";
+export * from "./capitalize.js";
+export * from "./extractColors.js";

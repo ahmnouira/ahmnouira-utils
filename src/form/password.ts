@@ -1,7 +1,18 @@
+/** Possible password strength levels. */
+export type PasswordStrength = "weak" | "medium" | "strong" | "very strong";
+
+/**
+ * Scores a password and returns a human-readable strength level.
+ *
+ * Checks: length >= 8, length >= 12, mixed case, digits and special chars.
+ *
+ * @param pwd The password to evaluate.
+ * @returns A `{ strength, score }` pair where `score` is 25, 50, 75 or 100.
+ */
 export const calculatePasswordStrength = (
   pwd: string
 ): {
-  strength: "weak" | "medium" | "strong" | "very strong";
+  strength: PasswordStrength;
   score: number;
 } => {
   let score = 0;
